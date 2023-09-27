@@ -15,5 +15,17 @@ loginBtn.addEventListener("click", login);
     // 선택자를 이용해서 js를 제어함
 
 function login() {
-    console.log(id.value);
+    const req = {
+        id: id.value,
+        psword: psword.value,
+    };
+
+    fetch("/login",{
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(req),
+    });
+    
 }
