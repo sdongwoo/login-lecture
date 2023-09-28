@@ -1,6 +1,4 @@
 "use strict"
-
-
 // Dom은 Document Object Model(문서객체모델)
 // 데이터를 가져와서 제어할 수 있게됨
 
@@ -8,6 +6,7 @@ const id = document.querySelector("#id"),
    // #은 테그의 id로 부여된 id를 가져와 달라는 뜻
   psword =  document.querySelector("psword"), 
   loginBtn = document.querySelector("button");
+
 loginBtn.addEventListener("click", login);
 //querySelector  = 질의 선택자 
     // html에 있는 teg들에 대한 정보들을 가져옴
@@ -19,7 +18,7 @@ function login() {
         id: id.value,
         psword: psword.value,
     };
-
+    
     fetch("/login",{
         method: "POST",
         headers: {
@@ -27,5 +26,6 @@ function login() {
         },
         body: JSON.stringify(req),
     });
-    
+   
+    //json 객체는 문자열로 감싸짐
 }
