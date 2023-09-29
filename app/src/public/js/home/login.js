@@ -28,6 +28,15 @@ function login() {
          //json 객체는 문자열로 감싸짐
     })
      .then((res) => res.json())
-     .then((res) => {});
-   
+     .then((res) => {
+        if (res.success) {
+            location.jref = "/";
+
+        } else {
+            alert(res.msg);
+        }
+     })
+     .catch((err) => {
+        console.error(new Error("로그인 중 에러발생"));
+     });
 }
