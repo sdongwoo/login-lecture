@@ -15,6 +15,7 @@
 "use strict";
 // 모듈
 const express = require("express");
+const bodyParser = require("body-parser");
 const app = express();
 
 // 라우팅
@@ -25,6 +26,12 @@ const home = require("./src/routes/home");
 app.set("views", "./src/views");
 // ejs는 많이 사용하는 엔진
 app.set("view engine", "ejs");
+app.use(express.static(`${__dirname}/src/public`));
+app.use(bodyParser.json());
+
+// URL을 통해 전달되는 
+app.use(bodyParser.urlencoded({ extended: true}));
+
 app.use("/", home);
 
 module.exports = app;
