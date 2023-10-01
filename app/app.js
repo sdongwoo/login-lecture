@@ -32,7 +32,7 @@ app.use(bodyParser.json());
 // URL을 통해 전달되는 
 app.use(bodyParser.urlencoded({ extended: true}));
 
-app.use("/", home);
+app.use("/", home);  //use -> 미들웨어를 등록해 주는 메서드. 
 
 module.exports = app;
 
