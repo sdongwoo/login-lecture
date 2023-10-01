@@ -1,3 +1,4 @@
+/*Copyright (c) 2023 by Aigars Silkalns (https://codepen.io/colorlib/pen/rxddKy) */
 "use strict"
 // Dom은 Document Object Model(문서객체모델)
 // 데이터를 가져와서 제어할 수 있게됨
